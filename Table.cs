@@ -97,8 +97,15 @@ namespace FinalPart
                     n++;
                 }
             }
+            MakeCopyMatrix();
+        }
 
-            Array.Copy(matrix, copyMatrix, count);
+        public void MakeCopyMatrix()
+        {
+            for(int i = 0; i < count; i++)
+            {
+                Array.Copy(matrix[i], copyMatrix[i], count);
+            }
         }
 
         public void Reduce()
@@ -121,11 +128,14 @@ namespace FinalPart
                         minJ = j;
                     }
                 }
-                if(minN < 3000)
+                if(minN < 9000)
                 {
                     for (int j = 0; j < count; j++)
                     {
-                        matrix[i][j] -= minN;
+                        if (matrix[j][i] < 9000)
+                        {
+                            matrix[i][j] -= minN;
+                        }
                     }
                 }
             }
@@ -146,22 +156,80 @@ namespace FinalPart
                         minJ = j;
                     }
                 }
-                if (minN < 3000)
+                if (minN < 9000)
                 {
-                    if (minN < 3000)
+                    for (int j = 0; j < count; j++)
                     {
-                        for (int j = 0; j < count; j++)
+                        if(matrix[j][i] < 9000)
                         {
                             matrix[j][i] -= minN;
                         }
                     }
                 }
             }
+
+            int[] lol = NeighboringNodes();
+            Console.WriteLine("d{0}{1} = {2}", lol[0], lol[1], lol[2]);
         }
         
-        public void NeighboringNodes()
+        public int[] NeighboringNodes()
         {
+            int[] h = { 0, 0, 0 };
+            int d;
+            
+            for(int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    if(matrix[i][j] == 0)
+                    {
+                        matrix[i][j] = 9999;
 
+                        int minRow = matrix[i].Min();
+
+                        int minCol = 9999;
+                        for (int k = 0; k < count; k++)
+                        {
+                            if(matrix[k][j] < minCol)
+                            {
+                                minCol = matrix[k][j];
+                            }
+                        }
+                        d = minRow + minCol;
+                        if( d > h[2] )
+                        {
+                            h[0] = i;
+                            h[1] = j;
+                            h[2] = d;
+                        }
+                        //Console.WriteLine("d{0}{1} = {2}", i+1, j+1, d);
+                        
+                        matrix[i][j] = 0;
+                    }
+                }
+            }
+
+            matrix[h[1]][h[0]] = 9999;
+
+            for(int i = 0; i < count; i++)
+            {
+                matrix[h[0]][i] = 9999;
+                matrix[i][h[1]] = 9999;
+            }
+            
+            //Console.WriteLine("h{0}{1} = {2}", h[0], h[1], h[2]);
+            return new int[]{ h[0]+1, h[1]+1, copyMatrix[h[0]][h[1]] };
+        }
+
+        public void NullExists()
+        {
+            for(int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+
+                }
+            }
         }
     }
 }
