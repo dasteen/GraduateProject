@@ -24,6 +24,7 @@ namespace FinalPart
             {
                 matrix[i] = new int[count];
                 copyMatrix[i] = new int[count];
+                finalPath[i] = new int[3];
             }
             for (int i = 0; i < count; i++)
             {
@@ -168,8 +169,8 @@ namespace FinalPart
                 }
             }
 
-            int[] lol = NeighboringNodes();
-            Console.WriteLine("d{0}{1} = {2}", lol[0], lol[1], lol[2]);
+            //int[] lol = NeighboringNodes();
+            //Console.WriteLine("d{0}{1} = {2}", lol[0], lol[1], lol[2]);
         }
         
         public int[] NeighboringNodes()
@@ -221,14 +222,64 @@ namespace FinalPart
             return new int[]{ h[0]+1, h[1]+1, copyMatrix[h[0]][h[1]] };
         }
 
-        public void NullExists()
+        public bool NullExists()
         {
             for(int i = 0; i < count; i++)
             {
                 for (int j = 0; j < count; j++)
                 {
-
+                    if(matrix[i][j] == 0)
+                    {
+                        return true;
+                    }
                 }
+            }
+            return false;
+        }
+
+        public bool NumbersExists()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    if (matrix[i][j] != 9999)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public void FindPath()
+        {
+            TestFilling();
+            ShowTable();
+            
+            int i = 0;
+            while(NumbersExists())
+            {
+                if (!NullExists())
+                {
+                    Reduce();
+                }
+                
+                finalPath[i] = NeighboringNodes();
+                
+                //Console.WriteLine("d{0}{1} = {2}", finalPath[i][0], finalPath[i][1], finalPath[i][2]);
+
+                i++;
+            }
+
+            ShowPath();
+        }
+
+        public void ShowPath()
+        {
+            for(int i = 0; i < count; i++)
+            {
+                Console.WriteLine("d{0}{1} = {2}", finalPath[i][0], finalPath[i][1], finalPath[i][2]);
             }
         }
     }

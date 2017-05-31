@@ -72,7 +72,16 @@ namespace FinalPart
 
         private void btnReduce(object sender, RoutedEventArgs e)
         {
-            MainWindow.table1.Reduce();
+            MainWindow.table1.FindPath();
+        }
+
+        private void btnCalculate(object sender, RoutedEventArgs e)
+        {
+            if (tboxCountOfNodes.Text == "")
+            {
+                MainWindow.table1 = new Table();
+                MainWindow.table1.FindPath();
+            }
         }
     }
 }
