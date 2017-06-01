@@ -10,8 +10,7 @@
 
     <Grid Background="#FFFFADAD">
         <Button Content="Show" Margin="200,175,10,96" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="29" Click="btnShowTable"/>
-        <Button Content="TestFilling" Margin="200,133,10,138" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="29" Click="btnTestFilling"/>
-        <Button Content="HandFilling" Margin="200,39,10,232" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="29" Click="btnHandFilling"/>
+        <Button Content="Ввести" Margin="200,39,10,232" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="29" Click="btnHandFilling"/>
         <TextBox x:Name="tboxCountOfNodes" Margin="114,39,114,232" HorizontalAlignment="Center" VerticalAlignment="Center" Height="29" Width="72" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></TextBox>
         <Button Content="Вычислить" Margin="200,219,10,52" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="29" Click="btnCalculate"/>
     </Grid>

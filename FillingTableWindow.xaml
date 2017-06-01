@@ -1,0 +1,66 @@
+﻿<Window x:Class="FinalPart.FillingTableWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalPart"
+        mc:Ignorable="d"
+        Title="Заполнить таблицу" Height="322.972" Width="433.644">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FFD2D9F1" Foreground="White" FontWeight="Bold"/>
+
+        <UniformGrid Rows="5" Columns="1" Grid.Column="0" Grid.Row="1">
+            <Label Content="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+        </UniformGrid>
+        <UniformGrid Rows="1" Columns="5" Grid.Column="1" Grid.Row="0">
+            <Label Content="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+            <Label Content="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FF96AFF4" Foreground="White" FontWeight="Bold"/>
+        </UniformGrid>
+        <UniformGrid Rows="5" Columns="5" Grid.Column="1" Grid.Row="1">
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBox  TextAlignment="Center" Padding="0 13 0 0" BorderThickness="2" BorderBrush="#FFD2D9F1" Background="#FFF2EFFF" FontSize="14" FontWeight="Bold"/>
+        </UniformGrid>
+
+        <Button Content="Применить" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" FontSize="14" Background="#FFDDDDDD"/>
+    </Grid>
+</Window>

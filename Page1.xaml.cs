@@ -28,17 +28,14 @@ namespace FinalPart
 
         int countOfNodes;
 
+        
+
         private void btnShowTable(object sender, RoutedEventArgs e)
         {
             MainWindow.table1.ShowTable();
             //MainWindow.table1.ShowCopyTable();
         }
-
-        private void btnTestFilling(object sender, RoutedEventArgs e)
-        {
-            MainWindow.table1 = new Table();
-            MainWindow.table1.TestFilling();
-        }
+        
 
         private void btnHandFilling(object sender, RoutedEventArgs e)
         {
@@ -47,6 +44,11 @@ namespace FinalPart
                 if(countOfNodes > 0)
                 {
                     MainWindow.table1 = new Table(countOfNodes);
+                    FillingTableWindow fillingTableWindow1 = new FillingTableWindow();
+                    
+                    fillingTableWindow1.ShowDialog();
+                    WindowTest windowTest1 = new WindowTest();
+                    windowTest1.ShowDialog();
                 }
                 else
                 {
@@ -82,6 +84,11 @@ namespace FinalPart
                 MainWindow.table1 = new Table();
                 MainWindow.table1.FindPath();
             }
+            else
+            {
+                MessageBox.Show("вычисление :)");
+            }
+
         }
     }
 }
