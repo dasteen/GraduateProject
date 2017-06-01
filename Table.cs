@@ -12,6 +12,8 @@ namespace FinalPart
         public int[][] matrix;
         public int[][] copyMatrix;
         public int[][] finalPath;
+        public int[][] correctedPath;
+        public int[][] firstToEach;
         int[] testMas = { 3, 9, 7, 4, 8, 5, 7, 10, 6, 11 };
 
         public Table(int count = 5)
@@ -20,11 +22,13 @@ namespace FinalPart
             matrix = new int[count][];
             copyMatrix = new int[count][];
             finalPath = new int[count][];
+            correctedPath = new int[count][];
+            firstToEach = new int[count - 1][];
             for (int i = 0; i < count; i++)
             {
                 matrix[i] = new int[count];
                 copyMatrix[i] = new int[count];
-                finalPath[i] = new int[3];
+                correctedPath[i] = new int[3];
             }
             for (int i = 0; i < count; i++)
             {
@@ -140,7 +144,6 @@ namespace FinalPart
                     }
                 }
             }
-
             
 
             for (int i = 0; i < count; i++)
@@ -251,6 +254,40 @@ namespace FinalPart
             }
             return false;
         }
+        
+        public void ShowPath(int[][] path)
+        {
+            Console.WriteLine();
+            for (int i = 0; i < path.Length; i++)
+            {
+                Console.Write("d-");
+                for (int j = 0; j < path[i].Length - 1; j++)
+                {
+                    Console.Write(path[i][j]);
+                }
+                Console.WriteLine(" = {0}", path[i][path[i].Length - 1]);
+                
+                //Console.WriteLine("d{0}{1} = {2}", path[i][0], path[i][1], path[i][2]);
+            }
+            Console.WriteLine("\n================================================");
+        }
+
+        public void CorrectThePath()
+        {
+            int n = 1;
+            for(int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    if (finalPath[j][0] == n)
+                    {
+                        Array.Copy(finalPath[j], correctedPath[i], 3);
+                        n = finalPath[j][1];
+                        break;
+                    }
+                }
+            }
+        }
 
         public void FindPath()
         {
@@ -271,16 +308,60 @@ namespace FinalPart
 
                 i++;
             }
+            
+            CorrectThePath();
+            ShowPath(correctedPath);
 
-            ShowPath();
+            FindFirstToEach();
+            ShowPath(firstToEach);
         }
 
-        public void ShowPath()
+        public void FindFirstToEach()
         {
-            for(int i = 0; i < count; i++)
+            int upSum = 0;
+            int downSum = 0;
+            for (int i = 0; i < count - 1; i++)
             {
-                Console.WriteLine("d{0}{1} = {2}", finalPath[i][0], finalPath[i][1], finalPath[i][2]);
+                upSum = 0;
+                downSum = 0;
+                for(int j = 0; j < i + 1; j++)
+                {
+                    upSum += correctedPath[j][2];
+                }
+                for (int j = correctedPath.Length - 1; j > i; j--)
+                {
+                    downSum += correctedPath[j][2];
+                }
+
+                if ( upSum <= downSum )
+                {
+                    firstToEach[i] = new int[i + 3];
+                    for (int j = 0; j < i + 2; j++)
+                    {
+                        firstToEach[i][j] = correctedPath[j][0];
+                    }
+                    firstToEach[i][firstToEach[i].Length - 1] = upSum;
+                }
+                else
+                {
+                    firstToEach[i] = new int[correctedPath.Length + 1 - i];
+                    int k = correctedPath.Length - 1;
+                    for (int j = 0; j < correctedPath.Length - i; j++)
+                    {
+                        firstToEach[i][j] = correctedPath[k][1];
+                        k--;
+                    }
+                    firstToEach[i][firstToEach[i].Length - 1] = downSum;
+                }
+
+
+                
             }
+
+
+
+
         }
+
     }
 }
