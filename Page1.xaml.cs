@@ -26,7 +26,7 @@ namespace FinalPart
             InitializeComponent();
         }
 
-        int countOfNodes;
+        public int countOfNodes;
 
         
 
@@ -44,10 +44,12 @@ namespace FinalPart
                 if(countOfNodes > 0)
                 {
                     MainWindow.table1 = new Table(countOfNodes);
-                    FillingTableWindow fillingTableWindow1 = new FillingTableWindow();
-                    
-                    fillingTableWindow1.ShowDialog();
+
+                    //FillingTableWindow fillingTableWindow1 = new FillingTableWindow();
+                    //fillingTableWindow1.ShowDialog();
+
                     WindowTest windowTest1 = new WindowTest();
+                    windowTest1.MakeTable(countOfNodes);
                     windowTest1.ShowDialog();
                 }
                 else

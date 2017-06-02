@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -24,22 +25,85 @@ namespace FinalPart
             InitializeComponent();
         }
         
-        public void MakeTable()
+        public void MakeTable(int count)
         {
-            this.MainGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            this.MainGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(5, GridUnitType.Star) });
-            this.MainGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
-            this.MainGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(5, GridUnitType.Star) });
-            this.MainGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
 
             Brush color1 = (Brush)(new BrushConverter()).ConvertFromString("#FFD2D9F1");
             Brush color2 = (Brush)(new BrushConverter()).ConvertFromString("#FF96AFF4");
             Brush color3 = (Brush)(new BrushConverter()).ConvertFromString("#FFF2EFFF");
+            
 
-            Label _0x0 = new Label() { BorderThickness = new Thickness(3), BorderBrush = color1, Background = color1, Foreground = Brushes.White, FontWeight = FontWeights.Bold };
+            Label[] cellNames = new Label[count];
+            TextBox[] cells = new TextBox[count * count];
 
-            //вставить в таблицу
+            UniformGrid CellNamesCol = new UniformGrid() { Name = "CellNamesCol", Rows = count, Columns = 1 };
+            CellNamesCol.SetValue(Grid.ColumnProperty, 0);
+            CellNamesCol.SetValue(Grid.RowProperty, 1);
 
+            UniformGrid CellNamesRow = new UniformGrid() { Name = "CellNamesRow", Rows = 1, Columns = count };
+            CellNamesRow.SetValue(Grid.ColumnProperty, 1);
+            CellNamesRow.SetValue(Grid.RowProperty, 0);
+
+            UniformGrid Cells = new UniformGrid() { Name = "Cells", Rows = count, Columns = count };
+            Cells.SetValue(Grid.ColumnProperty, 1);
+            Cells.SetValue(Grid.RowProperty, 1);
+
+            for (int i = 0; i < count; i++)
+            {
+                cellNames[i] = new Label()
+                {
+                    VerticalContentAlignment = VerticalAlignment.Center,
+                    HorizontalContentAlignment = HorizontalAlignment.Center,
+                    BorderThickness = new Thickness(3),
+                    Foreground = Brushes.White,
+                    FontWeight = FontWeights.Bold,
+                    BorderBrush = color1,
+                    Background = color2
+                };
+                cellNames[i].Content = i + 1;
+                CellNamesCol.Children.Add(cellNames[i]);
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                cellNames[i] = new Label()
+                {
+                    VerticalContentAlignment = VerticalAlignment.Center,
+                    HorizontalContentAlignment = HorizontalAlignment.Center,
+                    BorderThickness = new Thickness(3),
+                    Foreground = Brushes.White,
+                    FontWeight = FontWeights.Bold,
+                    BorderBrush = color1,
+                    Background = color2
+                };
+                cellNames[i].Content = i + 1;
+                CellNamesRow.Children.Add(cellNames[i]);
+            }
+
+            for (int i = 0; i < count*count; i++)
+            {
+                cells[i] = new TextBox()
+                {
+                    VerticalContentAlignment = VerticalAlignment.Center,
+                    HorizontalContentAlignment = HorizontalAlignment.Center,
+                    BorderThickness = new Thickness(3),
+                    FontWeight = FontWeights.Bold,
+                    FontSize = 14,
+                    Padding = new Thickness(0, 13, 0, 0),
+                    TextAlignment = TextAlignment.Center,
+                    BorderBrush = color1,
+                    Background = color3
+                };
+                Cells.Children.Add(cells[i]);
+            }
+
+
+
+
+
+            MainGrid.Children.Add(CellNamesCol);
+            MainGrid.Children.Add(CellNamesRow);
+            MainGrid.Children.Add(Cells);
         }
     }
 }

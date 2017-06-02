@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="WindowTest" Height="366.821" Width="503.248">
     <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
 
+        <Label Grid.Column="0" Grid.Row="0" BorderThickness="3" BorderBrush="#FFD2D9F1" Background="#FFD2D9F1" Foreground="White" FontWeight="Bold"/>
+
+        
+
+
+        <Button Content="Применить" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" FontSize="14" Background="#FFDDDDDD"/>
     </Grid>
 </Window>
