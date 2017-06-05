@@ -62,6 +62,7 @@
       <DependentUpon>FillingTableWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Table.cs" />
+    <Compile Include="Topology.cs" />
     <Compile Include="WindowTest.xaml.cs">
       <DependentUpon>WindowTest.xaml</DependentUpon>
     </Compile>

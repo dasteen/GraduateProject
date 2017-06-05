@@ -9,6 +9,14 @@
       Title="Page2">
 
     <Grid Background="#FFCFFFAD">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Canvas x:Name="MainCanvas" Grid.Row="0" Background="#FFD9FFC4" Margin="0,0,110,50" Grid.RowSpan="2"></Canvas>
         
+        <Button Grid.Row="1" Content="Показать" Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="90" Height="29" Click="btnShowTopology"/>
+
     </Grid>
 </Page>

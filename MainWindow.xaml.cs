@@ -27,7 +27,12 @@ namespace FinalPart
             MainFrame.Navigate(new Page1());
         }
         
+        
         public static Table table1;
 
+        public void toPage(Page page)
+        {
+            MainFrame.Navigate(page);
+        }
     }
 }

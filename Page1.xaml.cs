@@ -85,6 +85,7 @@ namespace FinalPart
             {
                 MainWindow.table1 = new Table();
                 MainWindow.table1.FindPath();
+                this.NavigationService.Navigate(new Page2());
             }
             else
             {
