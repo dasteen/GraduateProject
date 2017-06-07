@@ -29,6 +29,7 @@ namespace FinalPart
         
         
         public static Table table1;
+        public static int numberOfWavelength = 0;
 
         public void toPage(Page page)
         {
